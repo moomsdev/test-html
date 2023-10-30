@@ -4,20 +4,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hà Duy An - TEST</title>
+    <title>Hà Duy An - HTML test</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&amp;family=Roboto:wght@100;300;400;500;700&amp;display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
   </head>
-  <body>   
-    <div class="wrapper">
-      <header>
-        <div class="top-menu"></div>
-      </header>
-    </div>
+  <body>
+    <header class="header">
+      <div class="header-top">
+        <div class="row">
+          <div class="col-6 col-lg-2 logo"><a href="/"><img src="../../images/logo.png" alt="logo"></a></div>
+          <div class="col-6 col-lg-10 menu-header">
+            <nav>
+              <ul>
+                <li data-menuanchor="navySalt"><a href="#navySalt" title="navySalt">Navy Salt</a></li>
+                <li data-menuanchor="voyager"><a href="#voyager" title="voyager">Voyager</a></li>
+                <li data-menuanchor="drifter"><a href="#drifter" title="drifter">Drifter</a></li>
+                <li data-menuanchor="collection"><a href="#collection" title="collection">Collection</a></li>
+                <li data-menuanchor="contact"><a href="#contact" title="contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="navy-salt" id="navySalt">
+        <div class="row justify-content-end">
+          <div class="col-12 col-lg-8 media"><img src="../images/navy-salt.png" alt="navy-salt-img"></div>
+          <div class="col-12 col-lg-10 content"><span class="subtitle fz-43">Designed for utility</span>
+            <h2 class="title fz-97">Navy salt & pepper</h2><a class="read-more fz-43" href="#">Gear UP</a>
+          </div>
+        </div>
+      </section>
+      <section class="voyager"><img src="../images/voyager.png" alt="voyager-img">
+        <div class="content">
+          <div class="content-left">
+            <h2>VOYAGER DAYPACK</h2><span>NAVY SALT & PEPPER</span>
+          </div>
+          <div class="content-right">
+            <p>Whether you’re stomping around outdoors or traversing the city, our Voyager Daypack was designed to be adaptable in all environments. Compact, lightweight and a comfortable for people of all sizes. this silhouette is versatile enough to fit just about anyone’s daily routine.</p>
+          </div><a href="#drifter"><img src="../images/arrow-down.png" alt="arrow-down"></a>
+        </div>
+      </section>
+      <section class="drifter"><img src="../images/drifter.png" alt="drifter-img">
+        <div class="content">
+          <div class="content-left">
+            <h2>DRIFTER DOPP KIT</h2><span>NAVY SALT & PEPPER</span>
+          </div>
+          <div class="content-right">
+            <p>Field-tested from the peaks of the Cascades down to the desert floor of Joshua Tree, the Wilderness Rucksack was built to put on some serious miles for years to come. A comfortable, dependable combination of 14oz Salt & Pepper canvas, premium wool felt, and Cambara English bridle leather.</p>
+          </div><a href="#collection"><img src="../images/arrow-down.png" alt="arrow-down"></a>
+        </div>
+      </section>
+      <section class="collection">
+        <h2>Tanner Collections</h2><span>NAVY SALT & PEPPER</span>
+        <div class="collection-first"> <span>01</span>
+          <div class="first-top">
+            <div class="first-top--left"><img src="../images/collection-1.1.png" alt="nomad-duffle"></div>
+            <div class="first-top--right">
+              <h3>Nomad duffle</h3>
+              <p>This bag can be carried by hand, worn as a backpack or slung over a shoulder depending on your traveling needs</p><a href="#">Read more </a>
+            </div>
+          </div>
+          <div class="firtst-bottom">
+            <div class="first-bottom--left">
+              <h3>SPRUCE SALT & PEPPER</h3>
+              <p>We designed our Nomad Duffle as a versatile yet rugged piece of luggage that's just as comfortable outdoors as it is in an overhead compartment</p><a href="#">Read more </a>
+            </div>
+            <div class="first-bottom--right"><img src="../images/collection-1.2.png" alt="spruce-salt-pepper"></div>
+          </div>
+        </div>
+        <div class="collection-second"><span>02</span>
+          <div class="inner">
+            <div class="second--left"><img src="../images/collection-2.png" alt="field-camera-bag"></div>
+            <div class="second--right">
+              <h3>FIELD CAMERA BAG</h3>
+              <p>Our field camera bag is constructed from 14oz Salt & Pepper canvas and Cambara Meridian English bridle leather. We've put these bags through the ringer in testing and we think you'll approve of the result. Our Camera Bag is fully lined and padded, and features an adjustable shoulder strap and pad, as well as two interior flap pockets for smaller gear and film.</p><a href="#">Read more </a>
+            </div>
+          </div>
+        </div>
+        <div class="collection-third"><span>03</span>
+          <div class="inner">
+            <div class="third--left">
+              <h3>VOYAGER DAYPACK</h3>
+            </div>
+            <div class="third--right"><img src="../images/collection-3.png" alt="voyager-daypack"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-top"><a href="/"><img src="../../images/logo.png" alt="logo-footer"></a>
+        <nav class="menu-footer">
+          <ul>
+            <li><a href="#"> Finda</a></li>
+            <li><a href="#"> Store</a></li>
+            <li><a href="#"> Sizing</a></li>
+            <li><a href="#"> Care</a></li>
+            <li><a href="#"> Watch </a></li>
+          </ul>
+        </nav>
+        <div class="infor">
+          <ul>
+            <li><a href="#"> Sebazzo Ltd, Unit 3F2</a></li>
+            <li><a href="#"> Zetland House</a></li>
+            <li><a href="#"> 5-25 Scrutton Street</a></li>
+            <li><a href="#"> London EC2A 4HJ</a></li>
+          </ul>
+        </div>
+        <div class="newsletters">
+          <h3>Email Newsletters</h3>
+          <p>Sign up for new TANNER GOODS content, updates, surveys & offers.</p>
+          <form class="subscribe" action="" autocomplete>
+            <input class="subscribe-email" type="email">
+            <button class="subscribe-button" type="submit"><img srcSet="../../images/arrow-right.png" alt="icon-arrow-right"></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="copyright">© tanner goods portland ore 2016</div>
+        <ul class="socials">
+          <li> <a href="#">facebook </a></li>
+          <li> <a href="#">pinterest </a></li>
+          <li> <a href="#">twitter </a></li>
+          <li> <a href="#">instagram </a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>

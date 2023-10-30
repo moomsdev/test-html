@@ -1,5 +1,12 @@
-@import "./abstracts/variables";
 @import "./abstracts/mixins";
+@import "./abstracts/variables";
 
-@import "./base/reset";
 @import "./base/general";
+@import "./base/reset";
+
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/navy-salt";
+@import "./layout/voyager";
+@import "./layout/drifter";
+@import "./layout/collection";

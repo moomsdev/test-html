@@ -1,0 +1,115 @@
+.header {
+    padding: 0 2.2rem;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+
+    &-top {
+
+        .row {
+            --bs-gutter-x: 0;
+        }
+
+        .logo {    
+            padding: 6rem 0 12rem 0;
+            position: relative;
+            max-width: 43.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                width: 43.8rem;
+                height: 43.8rem;
+                background: #B8A47E;
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            img {
+                margin: 0 auto;
+                max-width: 30.9rem;
+            }
+
+            
+
+        }
+
+        .menu-header {
+            padding-left: 25.8rem;
+            display: flex;
+            align-items: center;
+
+            @include mediaMaxWidth (2501px) {
+                padding-left: 20rem;
+            }
+
+            ul {
+                display: flex;
+                align-items: center;
+                column-gap: 18.9rem;
+
+                @include mediaMaxWidth (2501px) {
+                    column-gap: 8rem;
+                }
+
+                @include mediaMaxWidth($xxl) {
+                    column-gap: 3rem;
+                }
+
+                @include mediaMaxWidth($lg) {
+                    column-gap: 2rem;
+                }
+            }
+
+            li a {
+                padding: 0 2.2rem;
+                position: relative;
+                font-size: 3rem;
+                @include responsive-font(1.4, 3);
+                font-weight: bold;
+
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: $primary-color;
+                }
+
+                &::after {
+                    left: 100%;
+                    width: .9rem;
+                    height: .9rem;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 0.2s linear;
+                }
+
+                &::before {
+                    right: 100%;
+                    width: 0;
+                    height: .3rem;
+                    transition: width 0.2s linear;
+                }
+                
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+
+                    &::before {
+                        width: 7.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

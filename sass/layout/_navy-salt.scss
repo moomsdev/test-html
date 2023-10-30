@@ -1,0 +1,72 @@
+.navy-salt {
+    position: relative;
+
+    .row {
+        --bs-gutter-x: 0;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        .subtitle {
+            @include responsive-mg-b(3, 6.8);
+        }
+
+        .title {
+            @include responsive-mg-b(3.5, 14.5);
+        }
+        
+        .read-more {
+            --bs-gutter-x: 1.5rem;
+
+            padding: 0 calc(var(--bs-gutter-x) * .5);
+            position: relative;
+            left: 8.33333333% ;
+            color: $primary-color;
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &::before {
+                right: 100%;
+                width: 0;
+                height: .3rem;
+                background-color: $primary-color;
+                transition: width 0.2s linear;
+            }
+
+            &::after {
+                left: 100%;
+                width: 2rem;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.2s linear;
+                background-image: url('../../images/arrow-right-2.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+
+                &::before {
+                    opacity: 1;
+                    width: 7.7rem;
+                }
+            }
+
+           
+        }
+    }
+ 
+}

@@ -3,17 +3,14 @@ html {
 }
 
 body {
-    font-family: var(--primary-font);
-    font-weight: 400;
-    background-color: white;
-    font-size: var(--fz-default);
-    color: var(--gray3);
-    line-height: 1;
+    font-family: $primary-font;
+    @include responsive-font (1.4, 2.9);
+    color: $black-color;
 }
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -21,4 +18,27 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+img {
+    width: 100%;
+}
+
+.fz-97 {
+    @include responsive-font(1.6, 9.7);
+}
+
+.fz-43 {
+    @include responsive-font (1.5, 4.3);
+}
+
+.title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.6rem
+}
+
+.subtitle {
+    display: block;
+    color: $grey-color;
 }
