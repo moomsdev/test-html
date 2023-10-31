@@ -1,5 +1,6 @@
 .navy-salt {
     position: relative;
+    @include responsive-mg-b(5,40);
 
     .row {
         --bs-gutter-x: 0;
@@ -11,11 +12,11 @@
         transform: translateY(-50%);
         
         .subtitle {
-            @include responsive-mg-b(3, 6.8);
+            @include responsive-mg-b(1.8, 6.8);
         }
 
         .title {
-            @include responsive-mg-b(3.5, 14.5);
+            @include responsive-mg-b(2, 14.5);
         }
         
         .read-more {
@@ -25,6 +26,10 @@
             position: relative;
             left: 8.33333333% ;
             color: $primary-color;
+
+            @include mediaMaxWidth ($sm) {
+                left: 3% ;
+            }
 
             &::after,
             &::before {
@@ -40,6 +45,10 @@
                 height: .3rem;
                 background-color: $primary-color;
                 transition: width 0.2s linear;
+
+                @include mediaMaxWidth ($sm) {
+                    height: .1rem;
+                }
             }
 
             &::after {
@@ -62,6 +71,14 @@
                 &::before {
                     opacity: 1;
                     width: 7.7rem;
+
+                    @include mediaMaxWidth ($lg) {
+                        width: 5rem;
+                    }
+
+                    @include mediaMaxWidth ($sm) {
+                        width: 4rem;
+                    }
                 }
             }
 

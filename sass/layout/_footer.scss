@@ -1,0 +1,149 @@
+.footer {
+    padding: 4.5rem 8rem;
+    
+    &-top {
+        margin-bottom: 2.2rem;
+        display: flex;
+        justify-content: space-around;
+
+        .logo-footer {
+            // padding: 0 9.4rem;
+        }
+
+        .menu-footer {
+            // padding: 0 19.4rem;
+
+            ul {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 12.9rem;
+    
+                li a{
+                    padding: 0 1.4rem;
+                    position: relative;
+                    display: block;
+                    @include responsive-font(1.8, 3);
+                    font-weight: bold;
+                    color: $gray-color;
+                    
+                    &::after,
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        background-color: $primary-color;
+                    }
+
+                    &::after {
+                        left: 100%;
+                        width: .9rem;
+                        height: .9rem;
+                        border-radius: 50%;
+                        opacity: 0;
+                        transition: opacity 0.2s linear;
+                    }
+
+                    &::before {
+                        right: 100%;
+                        width: 0;
+                        height: .3rem;
+                        transition: width 0.2s linear;
+                    }
+                    
+                    &:hover {
+                        color: #000;
+
+                        &::after {
+                            opacity: 1;
+                        }
+
+                        &::before {
+                            width: 7.7rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .infor {
+            ul li a {
+                font-family: $secondary-font;
+                @include responsive-font(1.8, 3);
+                font-weight: 300;
+                line-height: 1.33em;
+            }
+        }
+
+       
+    }
+
+    &-bottom {
+        display: inline-flex;
+        column-gap: 28.2rem;
+
+        .copyright {
+            min-width: max-content;
+            @include responsive-font(1.8, 3);
+            font-family: $secondary-font;
+            font-weight: 200;
+            color: $grey-color;
+            text-transform: uppercase;
+        }
+
+        .socials {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14.4rem;
+
+            li a{
+                padding: 0 1.4rem;
+                position: relative;
+                display: block;
+                @include responsive-font(1.8, 3);
+                font-weight: 200;
+                color: $gray-color;
+                text-align: center;
+                transition: all .25s linear;
+                
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: $primary-color;
+                }
+
+                &::after {
+                    left: 100%;
+                    width: .9rem;
+                    height: .9rem;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: opacity 0.2s linear;
+                }
+
+                &::before {
+                    right: 100%;
+                    width: 0;
+                    height: .3rem;
+                    transition: width 0.2s linear;
+                }
+                
+                &:hover {
+                    color: #000;
+                    font-weight: 600;
+
+                    &::after {
+                        opacity: 1;
+                    }
+
+                    &::before {
+                        width: 7.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

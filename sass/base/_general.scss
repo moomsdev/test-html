@@ -25,17 +25,32 @@ img {
 }
 
 .fz-97 {
-    @include responsive-font(1.6, 9.7);
+    @include responsive-font(1.8, 9.7);
 }
 
 .fz-43 {
     @include responsive-font (1.5, 4.3);
 }
+.fz-29 {
+    @include responsive-font (1.3, 2.9);
+}
 
 .title {
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2.6rem
+    letter-spacing: 2.6rem;
+
+    @include mediaMaxWidth($xxl) {
+        letter-spacing: 1.6rem;
+    }
+
+    @include mediaMaxWidth($lg) {
+        letter-spacing: 1rem;
+    }
+
+    @include mediaMaxWidth($sm) {
+        letter-spacing: .5rem;
+    }
 }
 
 .subtitle {

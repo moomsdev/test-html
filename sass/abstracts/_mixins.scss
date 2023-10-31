@@ -1,19 +1,3 @@
-
-@mixin flex(
-  $align-items: flex-start,
-  $justify-content: flex-start,
-  $gap: 0,
-  $flex-direction: row,
-  $flex-wrap: nowrap
-) {
-  display: flex;
-  align-items: $align-items;
-  justify-content: $justify-content;
-  flex-direction: $flex-direction;
-  flex-wrap: $flex-wrap;
-  gap: $gap;
-}
-
 @mixin mediaMinWidth($min-width) {
   @media only screen and (min-width: $min-width) {
     @content;
@@ -32,50 +16,47 @@
   }
 }
 
-@mixin responsive-font($min-size, $max-size, $important: false) {
-  $font-size: #{$max-size}rem;
+@mixin responsive-font($min-size, $max-size) {
+  $half-diff: calc(#{$max-size}rem - #{$min-size}rem) / 3;
+  $xxl-diff: calc(#{$max-size}rem - $half-diff);
+  $lg-diff: calc($xxl-diff - $half-diff);
 
-  @if $important {
-    $font-size: #{$max-size}rem !important;
+  font-size: #{$max-size}rem;
+
+  @include mediaMaxWidth(2500px) {
+    font-size: calc(#{$max-size}rem - $half-diff);
   }
 
-  font-size: $font-size;
-
   @include mediaMaxWidth($xxl) {
-    $font-size: calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2);
-
-    @if $important {
-      $font-size: calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2) !important;
-    }
-
-    font-size: $font-size;
+    font-size: calc($xxl-diff - $half-diff);
   }
 
   @include mediaMaxWidth($lg) {
-    $font-size: calc(calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2) - calc( calc( calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2) - #{$min-size}rem ) /2 )) ;
-    @if $important {
-      $font-size: calc(calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2) - calc( calc( calc(#{$max-size}rem - ((#{$max-size}rem - #{$min-size}rem)) / 2) - #{$min-size}rem ) /2 )) !important;
-    }
-
-    font-size: $font-size;
+    font-size: calc($lg-diff - $half-diff);
   }
 
   @include mediaMaxWidth($sm) {
-    $font-size: #{$min-size}rem;
-
-    @if $important {
-      $font-size: #{$min-size}rem !important;
-    }
-
-    font-size: $font-size;
+    font-size: #{$min-size}rem;
   }
 }
 
 @mixin responsive-mg-b($mg-b-min, $mg-b-max) {
+  $half-diff: calc(#{$mg-b-max}rem - #{$mg-b-min}rem) / 3;
+  $xxl-diff: calc(#{$mg-b-max}rem - $half-diff);
+  $lg-diff: calc($xxl-diff - $half-diff);
+
   margin-bottom: #{$mg-b-max}rem;
 
+  @include mediaMaxWidth(2500px) {
+    margin-bottom: calc(#{$mg-b-max}rem - $half-diff);
+  }
+
+  @include mediaMaxWidth($xxl) {
+    margin-bottom: calc($xxl-diff - $half-diff);
+  }
+
   @include mediaMaxWidth($lg) {
-    margin-bottom: calc(#{$mg-b-max}rem - ((#{$mg-b-max}rem - #{$mg-b-min}rem)) / 2);
+    margin-bottom: calc($lg-diff - $half-diff);
   }
 
   @include mediaMaxWidth($sm) {
@@ -84,10 +65,22 @@
 }
 
 @mixin responsive-mg-t($mg-t-min, $mg-t-max) {
-  margin-top: #{$mg-t-max}rem;
+  $half-diff: calc(#{$mg-t-max}rem - #{$mg-t-min}rem) / 3;
+  $xxl-diff: calc(#{$mg-t-max}rem - $half-diff);
+  $lg-diff: calc($xxl-diff - $half-diff);
+
+  margin-top: #{$mg-b-max}rem;
+
+  @include mediaMaxWidth(2500px) {
+    margin-top: calc(#{$mg-t-max}rem - $half-diff);
+  }
+
+  @include mediaMaxWidth($xxl) {
+    margin-top: calc($xxl-diff - $half-diff);
+  }
 
   @include mediaMaxWidth($lg) {
-    margin-top: calc(#{$mg-t-max}rem - ((#{$mg-t-max}rem - #{$mg-t-min}rem)) / 2);
+    margin-top: calc($lg-diff - $half-diff);
   }
 
   @include mediaMaxWidth($sm) {

@@ -71,6 +71,7 @@
             li a {
                 padding: 0 2.2rem;
                 position: relative;
+                display: block;
                 font-size: 3rem;
                 @include responsive-font(1.4, 3);
                 font-weight: bold;

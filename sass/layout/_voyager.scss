@@ -1,0 +1,64 @@
+.voyager {
+    position: relative;
+    @include responsive-mg-b(8,76);
+
+    .content {
+        padding-top: 13.8rem;
+        padding-bottom: 8.2rem;
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        transform: translateY(-50%);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12rem;
+
+        @include mediaMaxWidth (2500px) {
+            padding-top: 10rem;
+            padding-bottom: 5rem;
+            padding-right: 5rem;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 76.5%;
+            border: 3px solid $primary-color;
+        }
+        
+        .title {
+            @include responsive-mg-b(2, 5);
+            width: max-content;
+            color: white;
+            margin-right: -2.6rem;
+        }
+
+        .subtitle {
+            color: white;
+            text-align: end;
+        }
+
+        .content-right {
+            padding-right: 8.333333%;
+            position: relative;
+            left: 8.33333333%;
+            color: $light-grey-color;
+            line-height: 2.72em;
+
+            @include mediaMaxWidth (3500px) {
+                left: 0;
+                line-height: 1.5em;
+            }
+
+            @include mediaMaxWidth (2500px) {
+                padding-top: 10rem;
+                padding-bottom: 5rem;
+                padding-right: 5rem;
+            }
+        }
+    
+    } 
+}
